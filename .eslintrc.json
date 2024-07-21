@@ -1,3 +1,10 @@
 {
-  "extends": "next/core-web-vitals"
+    "extends": "next/core-web-vitals",
+    "rules": {
+        "indent": ["error", 4],
+        "quotes": ["error", "double"],
+        "max-len": ["error", { "code": 110 }],
+        "react/jsx-indent": ["error", 4],
+        "react/jsx-indent-props": ["error", 4]
+    }
 }
