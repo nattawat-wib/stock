@@ -14,7 +14,6 @@ export default function Home() {
         <NextUIProvider>
             <main className={`min-h-screen p-24 ${isDarkMode ? "dark" : ""} text-foreground bg-background`}>
                 <Switch
-                    defaultSelected
                     onChange={() => setIsDarkMode((prev) => !prev)}
                     startContent={<FontAwesomeIcon icon={faMoon} />}
                     endContent={<FontAwesomeIcon icon={faSun} />}
