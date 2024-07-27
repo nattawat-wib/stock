@@ -7,8 +7,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faSun, faBell } from "@fortawesome/free-regular-svg-icons";
 import { Button } from './components/button'
 
+import { useForm, SubmitHandler } from "react-hook-form";
+
 export default function Home() {
     const [isDarkMode, setIsDarkMode] = useState(false);
+    const {register, handleSubmit, watch} = useForm()
 
     return (
         <NextUIProvider>
