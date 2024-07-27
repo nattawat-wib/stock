@@ -2,17 +2,23 @@ import { Button as NextUiButton } from "@nextui-org/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 
+import { motion } from "framer-motion";
+
 export const Button = (props: any) => {
     return (
-        <NextUiButton
-            color={props.color}
-            className=""
-            onClick={() => {}}
-            startContent={<FontAwesomeIcon icon={props.icon} />}
-            endContent={<FontAwesomeIcon icon={props.endIcon} />}
+        <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.9 }}
         >
-            {props.label}
-        </NextUiButton>
+            <NextUiButton
+                color={props.color}
+                className=""
+                onClick={() => {}}
+                startContent={<FontAwesomeIcon icon={props.icon} />}
+                endContent={<FontAwesomeIcon icon={props.endIcon} />}
+            >
+                {props.label}
+            </NextUiButton>
+        </motion.button>
     );
 };
-
