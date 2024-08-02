@@ -6,8 +6,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faSun, faBell } from "@fortawesome/free-regular-svg-icons";
 import { Button } from './components/button'
 import { Checkbox } from "./components/checkbox";
+import { Select } from "./components/select";
 
 export default function Home() {
+    const mockSelect = [
+        "Cat",
+        "Dog",
+        "Rat"
+    ]
     return (
         <NextUIProvider>
             <main className={`min-h-screen p-24 ${true ? "dark" : ""} text-foreground bg-background`}>
@@ -15,7 +21,11 @@ export default function Home() {
                     startContent={<FontAwesomeIcon icon={faMoon} />}
                     endContent={<FontAwesomeIcon icon={faSun} />}
                 />
-                <Checkbox />
+                <Select 
+                    label="Animal"
+                    selectList={mockSelect}
+                />
+                <Checkbox label="Checkbox" />
                 <Input label="username" />
 
                 <Button 

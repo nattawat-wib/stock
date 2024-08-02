@@ -1,9 +1,9 @@
 import { Checkbox as PrimeCheckbox } from "@nextui-org/react";
 
-export function Checkbox() {
+export function Checkbox(props: any) {
     return (
         <PrimeCheckbox>
-            Checkbox
+            { props.label }
         </PrimeCheckbox>
     )
 }
