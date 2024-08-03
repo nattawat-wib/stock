@@ -26,8 +26,8 @@ export const Button: React.FC<ButtonProps> = ({
     whileTap = { scale: 1.1 },
     whileHover = { scale: 0.9 },
     onClick = () => {},
-    // icon = "",
-    // endIcon = "",
+    icon = null,
+    endIcon = null,
 }) => {
     return (
         <MotionButton
@@ -37,8 +37,8 @@ export const Button: React.FC<ButtonProps> = ({
             variant={variant}
             className={className}
             onClick={onClick}
-            // startContent={<FontAwesomeIcon icon={icon} />}
-            // endContent={<FontAwesomeIcon icon={endIcon} />}
+            startContent={icon && <FontAwesomeIcon icon={icon} />}
+            endContent={endIcon && <FontAwesomeIcon icon={endIcon} />}
         >
             {label}
         </MotionButton>
