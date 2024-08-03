@@ -4,19 +4,43 @@ import React from "react";
 
 import { motion } from "framer-motion";
 
-export const Button = (props: any) => {
+const MotionButton = motion(NextUiButton);
+
+export interface ButtonProps {
+    color?: "primary" | "secondary" | "success" | "warning" | "default" | "danger" | undefined;
+    variant?: "solid" | "shadow" | "bordered" | "light" | "flat" | "faded" | "ghost" | undefined;
+    label?: string;
+    className?: string;
+    whileTap?: { scale: number };
+    whileHover?: { scale: number };
+    onClick?: any;
+    icon?: any;
+    endIcon?: any;
+}
+
+export const Button: React.FC<ButtonProps> = ({
+    color = "primary",
+    variant = "solid",
+    label = "",
+    className = "",
+    whileTap = { scale: 1.1 },
+    whileHover = { scale: 0.9 },
+    onClick = () => {},
+    // icon = "",
+    // endIcon = "",
+}) => {
     return (
-        <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.9 }}>
-            <NextUiButton
-                color={props.color}
-                variant={props.variant}
-                className=""
-                onClick={() => {}}
-                // startContent={<FontAwesomeIcon icon={props.icon} />}
-                // endContent={<FontAwesomeIcon icon={props.endIcon} />}
-            >
-                {props.label}
-            </NextUiButton>
-        </motion.button>
+        <MotionButton
+            whileHover={whileHover}
+            whileTap={whileTap}
+            color={color}
+            variant={variant}
+            className={className}
+            onClick={onClick}
+            // startContent={<FontAwesomeIcon icon={icon} />}
+            // endContent={<FontAwesomeIcon icon={endIcon} />}
+        >
+            {label}
+        </MotionButton>
     );
 };
