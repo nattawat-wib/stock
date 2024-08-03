@@ -6,16 +6,14 @@ import { motion } from "framer-motion";
 
 export const Button = (props: any) => {
     return (
-        <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.9 }}
-        >
+        <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.9 }}>
             <NextUiButton
                 color={props.color}
+                variant={props.variant}
                 className=""
                 onClick={() => {}}
-                startContent={<FontAwesomeIcon icon={props.icon} />}
-                endContent={<FontAwesomeIcon icon={props.endIcon} />}
+                // startContent={<FontAwesomeIcon icon={props.icon} />}
+                // endContent={<FontAwesomeIcon icon={props.endIcon} />}
             >
                 {props.label}
             </NextUiButton>
